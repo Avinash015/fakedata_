@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Registration</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Teacher Registration</h1>
+    
+    <!-- Add this section to display flash messages -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for message in messages %}
+            <div class="flash-message alert alert-{{ message[1] }}">
+              {{ message[0] }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    
+    <form method="POST">
+        <!-- Teacher Registration Fields -->
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" required><br><br>
+
+            <label for="qualifications">Qualifications:</label>
+            <input type="text" name="qualifications" required><br><br>
+
+            <label for="experience">Experience:</label>
+            <input type="text" name="experience" required><br><br>
+
+            <label for="expertise">Expertise:</label>
+            <input type="text" name="expertise" required><br><br>
+
+            <label for="teaching_style">Teaching Style:</label>
+            <input type="text" name="teaching_style" required><br><br>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Include JavaScript if needed -->
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Main Page</h1>
+    <ul>
+        <li><a href="{{ url_for('student_registration') }}">student Registration</a></li>
+        <li><a href="{{ url_for('teacher_registration') }}">teacher Registration</a></li>
+        <li><a href="{{ url_for('student_details') }}">student_details</a></li>
+        <li><a href="{{ url_for('teacher_details') }}">teacher_details</a></li>      
+    </ul>
+</body>
+</html>

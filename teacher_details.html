@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Details</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Teacher Details</h1>
+
+    <!-- Search form -->
+    <form method="GET" action="{{ url_for('teacher_details') }}">
+        <label for="query">Search:</label>
+        <input type="text" name="query" id="query">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Display search results -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Qualifications</th>
+                <th>Experience</th>
+                <th>Expertise</th>
+                <th>Teaching Style</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>{{ teacher.id }}</td>
+                <td>{{ teacher.name }}</td>
+                <td>{{ teacher.qualifications }}</td>
+                <td>{{ teacher.experience }}</td>
+                <td>{{ teacher.expertise }}</td>
+                <td>{{ teacher.teaching_style }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
